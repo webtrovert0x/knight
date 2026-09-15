@@ -1,0 +1,16 @@
+# Hardhat build artifacts
+artifacts/
+cache/
+typechain/
+typechain-types/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+*.local
+
+# Logs
+*.log

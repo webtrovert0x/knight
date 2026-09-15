@@ -1,0 +1,270 @@
+export const CHESS_CONTRACT_ADDRESS = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ||
+  process.env.VITE_CONTRACT_ADDRESS ||
+  '0xB20D0159A7310370cB2E022b130fcC7DCD6D98DA') as `0x${string}`;
+
+export const CHESS_ABI = [
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "uint256", "name": "gameId", "type": "uint256" },
+      { "indexed": true, "internalType": "address", "name": "creator", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "wager", "type": "uint256" },
+      { "indexed": false, "internalType": "bool", "name": "isWhite", "type": "bool" },
+      { "indexed": false, "internalType": "uint256", "name": "timePerMove", "type": "uint256" }
+    ],
+    "name": "GameCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "uint256", "name": "gameId", "type": "uint256" },
+      { "indexed": true, "internalType": "address", "name": "opponent", "type": "address" },
+      { "indexed": false, "internalType": "address", "name": "whitePlayer", "type": "address" },
+      { "indexed": false, "internalType": "address", "name": "blackPlayer", "type": "address" }
+    ],
+    "name": "GameJoined",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "uint256", "name": "gameId", "type": "uint256" },
+      { "indexed": true, "internalType": "address", "name": "player", "type": "address" },
+      { "indexed": false, "internalType": "string", "name": "moveNotation", "type": "string" },
+      { "indexed": false, "internalType": "string", "name": "newFen", "type": "string" },
+      { "indexed": false, "internalType": "uint256", "name": "moveCount", "type": "uint256" }
+    ],
+    "name": "MoveMade",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "uint256", "name": "gameId", "type": "uint256" },
+      { "indexed": true, "internalType": "address", "name": "from", "type": "address" }
+    ],
+    "name": "DrawOffered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "uint256", "name": "gameId", "type": "uint256" },
+      { "indexed": false, "internalType": "address", "name": "winner", "type": "address" },
+      { "indexed": false, "internalType": "uint8", "name": "state", "type": "uint8" },
+      { "indexed": false, "internalType": "uint256", "name": "payout", "type": "uint256" }
+    ],
+    "name": "GameOver",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "uint256", "name": "gameId", "type": "uint256" },
+      { "indexed": true, "internalType": "address", "name": "creator", "type": "address" }
+    ],
+    "name": "GameCancelled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "address", "name": "player", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "score", "type": "uint256" },
+      { "indexed": false, "internalType": "uint8", "name": "difficulty", "type": "uint8" }
+    ],
+    "name": "ScoreRecorded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "address", "name": "player", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "newRating", "type": "uint256" },
+      { "indexed": false, "internalType": "uint256", "name": "wins", "type": "uint256" },
+      { "indexed": false, "internalType": "uint256", "name": "losses", "type": "uint256" }
+    ],
+    "name": "RatingUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "bool", "name": "playAsWhite", "type": "bool" },
+      { "internalType": "uint256", "name": "timePerMove", "type": "uint256" }
+    ],
+    "name": "createGame",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gameId", "type": "uint256" }],
+    "name": "joinGame",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "gameId", "type": "uint256" },
+      { "internalType": "string", "name": "moveNotation", "type": "string" },
+      { "internalType": "string", "name": "newFen", "type": "string" },
+      { "internalType": "bool", "name": "isCheckmate", "type": "bool" },
+      { "internalType": "bool", "name": "isDraw", "type": "bool" }
+    ],
+    "name": "makeMove",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gameId", "type": "uint256" }],
+    "name": "resign",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gameId", "type": "uint256" }],
+    "name": "offerDraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gameId", "type": "uint256" }],
+    "name": "acceptDraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gameId", "type": "uint256" }],
+    "name": "claimTimeout",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gameId", "type": "uint256" }],
+    "name": "cancelGame",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "score", "type": "uint256" },
+      { "internalType": "uint8", "name": "difficulty", "type": "uint8" }
+    ],
+    "name": "recordPracticeScore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "player", "type": "address" }],
+    "name": "getPlayerStats",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "playerAddress", "type": "address" },
+          { "internalType": "uint256", "name": "wins", "type": "uint256" },
+          { "internalType": "uint256", "name": "losses", "type": "uint256" },
+          { "internalType": "uint256", "name": "draws", "type": "uint256" },
+          { "internalType": "uint256", "name": "rating", "type": "uint256" },
+          { "internalType": "uint256", "name": "totalWinnings", "type": "uint256" },
+          { "internalType": "uint256", "name": "totalGames", "type": "uint256" },
+          { "internalType": "uint256", "name": "highScore", "type": "uint256" }
+        ],
+        "internalType": "struct ChessGame.PlayerStats",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "limit", "type": "uint256" }],
+    "name": "getLeaderboard",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "playerAddress", "type": "address" },
+          { "internalType": "uint256", "name": "wins", "type": "uint256" },
+          { "internalType": "uint256", "name": "losses", "type": "uint256" },
+          { "internalType": "uint256", "name": "draws", "type": "uint256" },
+          { "internalType": "uint256", "name": "rating", "type": "uint256" },
+          { "internalType": "uint256", "name": "totalWinnings", "type": "uint256" },
+          { "internalType": "uint256", "name": "totalGames", "type": "uint256" },
+          { "internalType": "uint256", "name": "highScore", "type": "uint256" }
+        ],
+        "internalType": "struct ChessGame.PlayerStats[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "gameId", "type": "uint256" }],
+    "name": "getGame",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "address", "name": "whitePlayer", "type": "address" },
+          { "internalType": "address", "name": "blackPlayer", "type": "address" },
+          { "internalType": "uint256", "name": "wager", "type": "uint256" },
+          { "internalType": "uint256", "name": "totalPot", "type": "uint256" },
+          { "internalType": "string", "name": "fen", "type": "string" },
+          { "internalType": "string", "name": "lastMoveNotation", "type": "string" },
+          { "internalType": "uint256", "name": "moveCount", "type": "uint256" },
+          { "internalType": "uint256", "name": "lastMoveTimestamp", "type": "uint256" },
+          { "internalType": "uint256", "name": "timePerMove", "type": "uint256" },
+          { "internalType": "address", "name": "currentTurn", "type": "address" },
+          { "internalType": "uint8", "name": "state", "type": "uint8" },
+          { "internalType": "address", "name": "drawOfferFrom", "type": "address" },
+          { "internalType": "address", "name": "creator", "type": "address" }
+        ],
+        "internalType": "struct ChessGame.Game",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "limit", "type": "uint256" }],
+    "name": "getRecentGames",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "address", "name": "whitePlayer", "type": "address" },
+          { "internalType": "address", "name": "blackPlayer", "type": "address" },
+          { "internalType": "uint256", "name": "wager", "type": "uint256" },
+          { "internalType": "uint256", "name": "totalPot", "type": "uint256" },
+          { "internalType": "string", "name": "fen", "type": "string" },
+          { "internalType": "string", "name": "lastMoveNotation", "type": "string" },
+          { "internalType": "uint256", "name": "moveCount", "type": "uint256" },
+          { "internalType": "uint256", "name": "lastMoveTimestamp", "type": "uint256" },
+          { "internalType": "uint256", "name": "timePerMove", "type": "uint256" },
+          { "internalType": "address", "name": "currentTurn", "type": "address" },
+          { "internalType": "uint8", "name": "state", "type": "uint8" },
+          { "internalType": "address", "name": "drawOfferFrom", "type": "address" },
+          { "internalType": "address", "name": "creator", "type": "address" }
+        ],
+        "internalType": "struct ChessGame.Game[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+] as const;
