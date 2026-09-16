@@ -16,6 +16,7 @@ const dotenv = require("dotenv");
 
 require("@nomicfoundation/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
+require("@nomicfoundation/hardhat-verify");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -37,4 +38,23 @@ module.exports = {
       gasPrice: "auto",
     },
   },
+  etherscan: {
+    apiKey: {
+      botchain_testnet: "abc",
+    },
+    customChains: [
+      {
+        network: "botchain_testnet",
+        chainId: 968,
+        urls: {
+          apiURL: "https://scan.bohr.life/api",
+          browserURL: "https://scan.bohr.life",
+        },
+      },
+    ],
+  },
+  sourcify: {
+    enabled: false,
+  },
 };
+
