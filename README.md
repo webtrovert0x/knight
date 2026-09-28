@@ -1,6 +1,6 @@
-# ♟️ Knight (BOT Chain Testnet)
+# ♟️ Knight (BOT Chain)
 
-Decentralized, trustless PvP Chess game powered by smart contracts on **BOT Chain Testnet** (Chain ID: `968`, Native Token: `BOT`).
+Decentralized, trustless PvP Chess game powered by smart contracts on **BOT Chain** (Chain ID: `677`, Native Token: `BOT`).
 
 ---
 
@@ -12,13 +12,13 @@ onchain-chess/
 │   ├── contracts/
 │   │   └── ChessGame.sol   # Wager escrow, matchmaking, move tracker, timeouts & payouts
 │   ├── scripts/
-│   │   └── deploy.js       # Deploy script targeting BOT Chain Testnet
+│   │   └── deploy.js       # Deploy script targeting BOT Chain Mainnet
 │   ├── test/
-│   │   └── ChessGame.test.js # Comprehensive unit tests (8 passing tests)
-│   ├── hardhat.config.js   # BOT Chain Testnet RPC & Network config
+│   │   └── ChessGame.test.js # Comprehensive unit tests
+│   ├── hardhat.config.js   # BOT Chain Mainnet RPC & Network config
 │   └── package.json
 │
-└── frontend/                # Web3 Chess DApp (Vite + React + TypeScript + TailwindCSS)
+└── frontend/                # Web3 Chess DApp (Next.js App Router + TypeScript + TailwindCSS)
     ├── src/
     │   ├── config/         # BOT Chain viem definition & Reown AppKit setup
     │   ├── components/     # ChessboardView, GameLobby, GamePanel, PracticeGame, Navbar
@@ -26,18 +26,19 @@ onchain-chess/
     │   ├── utils/          # Web Audio synthesized sound effects
     │   └── contracts/      # ABI and contract interfaces
     ├── package.json
-    └── vite.config.ts
+    └── next.config.mjs
 ```
 
 ---
 
-## ⚙️ Network Details (BOT Chain Testnet)
+## ⚙️ Network Details
 
-- **Network Name**: BOT Chain Testnet
-- **Chain ID**: `968`
-- **RPC Endpoint**: `https://rpc.bohr.life`
+- **Network Name**: BOT Chain
+- **Chain ID**: `677`
+- **RPC Endpoint**: `https://rpc.botchain.ai`
 - **Native Token Symbol**: `BOT`
-- **Block Explorer**: [https://scan.bohr.life/](https://scan.bohr.life/)
+- **Block Explorer**: [https://scan.botchain.ai/](https://scan.botchain.ai/)
+- **Deployed Contract**: `0x32546D587F052e775642390370beE2cE55F327B3` ([Verified on BotScan](https://scan.botchain.ai/address/0x32546D587F052e775642390370beE2cE55F327B3#code))
 
 ---
 
@@ -52,9 +53,9 @@ npm install
 # Run unit tests
 npx hardhat test
 
-# Deploy to BOT Chain Testnet
-# (Requires PRIVATE_KEY with testnet BOT in .env)
-npx hardhat run scripts/deploy.js --network botchain_testnet
+# Deploy to BOT Chain Mainnet
+# (Requires PRIVATE_KEY with BOT in .env)
+npx hardhat run scripts/deploy.js --network botchain_mainnet
 ```
 
 ### 2. Frontend Application

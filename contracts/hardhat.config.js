@@ -29,26 +29,27 @@ module.exports = {
       },
     },
   },
+  defaultNetwork: "botchain_mainnet",
   networks: {
     hardhat: {},
-    botchain_testnet: {
-      url: "https://rpc.bohr.life",
-      chainId: 968,
+    botchain_mainnet: {
+      url: "https://rpc.botchain.ai",
+      chainId: 677,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY.startsWith("0x") ? process.env.PRIVATE_KEY : "0x" + process.env.PRIVATE_KEY] : [],
       gasPrice: "auto",
     },
   },
   etherscan: {
     apiKey: {
-      botchain_testnet: "abc",
+      botchain_mainnet: "abc",
     },
     customChains: [
       {
-        network: "botchain_testnet",
-        chainId: 968,
+        network: "botchain_mainnet",
+        chainId: 677,
         urls: {
-          apiURL: "https://scan.bohr.life/api",
-          browserURL: "https://scan.bohr.life",
+          apiURL: "https://scan.botchain.ai/api",
+          browserURL: "https://scan.botchain.ai",
         },
       },
     ],

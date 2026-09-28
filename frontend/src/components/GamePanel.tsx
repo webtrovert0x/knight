@@ -291,7 +291,7 @@ export const GamePanel: React.FC<GamePanelProps> = ({
                 </div>
                 <div className="text-sm font-bold text-white mb-1">Waiting for Opponent</div>
                 <p className="text-xs text-slate-400 mb-4">
-                  Share this match ID with a friend or test on BOT Chain Testnet.
+                  Share this match ID with a friend to play on BOT Chain.
                 </p>
                 {address && gameData.creator.toLowerCase() === address.toLowerCase() && (
                   <button

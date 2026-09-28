@@ -3,7 +3,7 @@ pragma solidity ^0.8.24;
 
 /**
  * @title ChessGame
- * @dev On-Chain Chess Game contract deployed on BOT Chain Testnet
+ * @dev On-Chain Chess Game contract deployed on BOT Chain
  * Handles wager escrow, matchmaking, move recording, on-chain player scores, ratings & leaderboard.
  */
 contract ChessGame {

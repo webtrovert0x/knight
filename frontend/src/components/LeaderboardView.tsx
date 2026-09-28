@@ -171,11 +171,11 @@ export const LeaderboardView: React.FC<LeaderboardViewProps> = ({
                       {/* Explorer Link */}
                       <td className="px-6 py-4 text-center">
                         <a
-                          href={`https://scan.bohr.life/address/${player.playerAddress}`}
+                          href={`https://scan.botchain.ai/address/${player.playerAddress}`}
                           target="_blank"
                           rel="noreferrer"
                           className="inline-flex p-1.5 bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded-lg transition-all"
-                          title="View on BohrScan"
+                          title="View on BotScan"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>

@@ -76,7 +76,7 @@ export const GameLobby: React.FC<GameLobbyProps> = ({
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold mb-3">
               <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
-              Live on BOT Chain Testnet (Chain ID 968)
+              Live on BOT Chain (Chain ID 677)
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
               <span className="bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Knight</span> On-Chain Chess

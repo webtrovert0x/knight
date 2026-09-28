@@ -4,7 +4,7 @@ import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: 'Knight | On-Chain Chess & Grandmaster Arena on BOT Chain',
-  description: 'Decentralized PvP Chess with on-chain player scores, ratings & BOT token wagers on BOT Chain Testnet (Chain ID: 968).',
+  description: 'Decentralized PvP Chess with on-chain player scores, ratings & BOT token wagers on BOT Chain (Chain ID: 677).',
   icons: {
     icon: [
       { url: '/favicon.png', type: 'image/png' },

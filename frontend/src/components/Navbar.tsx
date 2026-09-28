@@ -3,7 +3,7 @@
 import React from 'react';
 import { useAccount, useBalance } from 'wagmi';
 import { ExternalLink, Flame, Shield, Coins, Sparkles, Trophy } from 'lucide-react';
-import { botchainTestnet } from '../config/chains';
+import { botchainMainnet } from '../config/chains';
 import type { PlayerStats } from '../hooks/useChessContract';
 
 interface NavbarProps {
@@ -24,10 +24,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   const { address, isConnected, chainId } = useAccount();
   const { data: balanceData } = useBalance({
     address,
-    chainId: botchainTestnet.id,
+    chainId: botchainMainnet.id,
   });
 
-  const isWrongNetwork = isConnected && chainId !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && chainId !== botchainMainnet.id;
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/80 border-b border-indigo-500/20 px-4 lg:px-8 py-3 transition-all">
@@ -95,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
 
-        {/* Right Section: Stats, BohrScan, Connect Wallet */}
+        {/* Right Section: Stats, BotScan, Connect Wallet */}
         <div className="flex items-center gap-3">
           {/* User On-Chain ELO Rating */}
           {isConnected && userStats && (
@@ -120,14 +120,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           )}
 
-          {/* Faucet / Explorer Link */}
+          {/* Explorer Link */}
           <a
-            href="https://scan.bohr.life/"
+            href="https://scan.botchain.ai/"
             target="_blank"
             rel="noreferrer"
             className="hidden sm:flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700/60 hover:border-indigo-500/50 transition-all shadow-sm"
           >
-            <span>BohrScan</span>
+            <span>BotScan</span>
             <ExternalLink className="w-3 h-3 text-slate-400" />
           </a>
 

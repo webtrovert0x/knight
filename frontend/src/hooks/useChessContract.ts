@@ -145,7 +145,7 @@ export function useChessContract() {
         value,
       });
 
-      setStatusMessage('Waiting for transaction confirmation on BohrScan...');
+      setStatusMessage('Waiting for transaction confirmation on BotScan...');
       await publicClient.waitForTransactionReceipt({ hash });
       setStatusMessage('Match created successfully on-chain!');
       setTimeout(() => setStatusMessage(null), 3500);
@@ -236,7 +236,7 @@ export function useChessContract() {
         args: [BigInt(score), difficulty],
       });
 
-      setStatusMessage('Transaction submitted. Confirming on BohrScan...');
+      setStatusMessage('Transaction submitted. Confirming on BotScan...');
       await publicClient.waitForTransactionReceipt({ hash });
       setStatusMessage('🎉 Score successfully recorded on BOT Chain!');
       setTimeout(() => setStatusMessage(null), 4000);

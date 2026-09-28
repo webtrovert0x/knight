@@ -1,6 +1,6 @@
 import { createAppKit } from '@reown/appkit/react';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
-import { botchainTestnet } from './chains';
+import { botchainMainnet } from './chains';
 
 // 1. Get projectId from environment or fallback
 export const projectId =
@@ -11,17 +11,17 @@ export const projectId =
 // 2. Metadata for Reown AppKit
 const metadata = {
   name: 'Knight',
-  description: 'Decentralized PvP Chess with On-Chain Scores & BOT Token Wagers on BOT Chain Testnet',
-  url: typeof window !== 'undefined' ? window.location.origin : 'https://botchain.life',
+  description: 'Decentralized PvP Chess with On-Chain Scores & BOT Token Wagers on BOT Chain',
+  url: typeof window !== 'undefined' ? window.location.origin : 'https://botchain.ai',
   icons: ['/logo.png'],
 };
 
 // 3. Supported Networks
-export const networks = [botchainTestnet] as const;
+export const networks = [botchainMainnet] as const;
 
 // 4. Create Wagmi Adapter
 export const wagmiAdapter = new WagmiAdapter({
-  networks: [botchainTestnet],
+  networks: [botchainMainnet],
   projectId,
   ssr: true,
 });
@@ -29,8 +29,8 @@ export const wagmiAdapter = new WagmiAdapter({
 // 5. Initialize AppKit Modal if on client side
 export const modal = createAppKit({
   adapters: [wagmiAdapter],
-  networks: [botchainTestnet],
-  defaultNetwork: botchainTestnet,
+  networks: [botchainMainnet],
+  defaultNetwork: botchainMainnet,
   metadata,
   projectId,
   features: {
@@ -44,3 +44,4 @@ export const modal = createAppKit({
     '--w3m-border-radius-master': '12px',
   },
 });
+

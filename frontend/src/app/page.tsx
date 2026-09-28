@@ -134,10 +134,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>BOT Chain Testnet (Chain ID: 968)</span>
+            <span>BOT Chain (Chain ID: 677)</span>
             <span>•</span>
             <a
-              href="https://rpc.bohr.life"
+              href="https://rpc.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="text-indigo-400 hover:underline"
@@ -148,12 +148,12 @@ export default function Home() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://scan.bohr.life/address/0xB20D0159A7310370cB2E022b130fcC7DCD6D98DA"
+              href="https://scan.botchain.ai/address/0x32546D587F052e775642390370beE2cE55F327B3"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1 text-slate-400 hover:text-white transition-colors"
             >
-              <span>ChessGame Contract on BohrScan</span>
+              <span>ChessGame Contract on BotScan</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
