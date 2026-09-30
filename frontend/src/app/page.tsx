@@ -129,32 +129,44 @@ export default function Home() {
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="relative z-10 border-t border-slate-900 bg-slate-950/80 backdrop-blur-md py-6 px-4 mt-auto">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>BOT Chain (Chain ID: 677)</span>
+      {/* Footer / Ecosystem Section */}
+      <footer className="relative z-10 border-t border-slate-900 bg-slate-950/90 backdrop-blur-md py-6 px-4 mt-auto">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-semibold">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>BOT Chain Mainnet (Chain ID: 677)</span>
+            </div>
             <span>•</span>
             <a
-              href="https://rpc.botchain.ai"
+              href="https://botchain.ai"
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-400 hover:underline"
+              className="text-slate-300 hover:text-white hover:underline font-medium transition-colors"
             >
-              RPC Endpoint
+              BOT Chain Website
+            </a>
+            <span>•</span>
+            <a
+              href="https://scan.botchain.ai"
+              target="_blank"
+              rel="noreferrer"
+              className="text-slate-300 hover:text-white hover:underline font-medium transition-colors"
+            >
+              BOT Chain Explorer
             </a>
           </div>
 
           <div className="flex items-center gap-4">
             <a
-              href="https://scan.botchain.ai/address/0x32546D587F052e775642390370beE2cE55F327B3"
+              href="https://scan.botchain.ai/address/0x32546D587F052e775642390370beE2cE55F327B3#code"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1 text-slate-400 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition-all shadow-sm"
             >
-              <span>ChessGame Contract on BotScan</span>
-              <ExternalLink className="w-3 h-3" />
+              <span className="text-emerald-400 font-bold">✓</span>
+              <span>Verified Contract on BotScan</span>
+              <ExternalLink className="w-3 h-3 text-slate-500" />
             </a>
           </div>
         </div>
