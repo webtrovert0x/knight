@@ -19,6 +19,9 @@ const nextConfig = {
       fs: false,
       net: false,
       tls: false,
+      'pino-pretty': false,
+      lokijs: false,
+      encoding: false,
       '@x402/core': false,
       '@x402/core/client': false,
       '@x402/evm': false,
@@ -27,6 +30,7 @@ const nextConfig = {
       '@x402/svm': false,
       '@x402/svm/exact/client': false,
     };
+    config.externals.push('pino-pretty', 'lokijs', 'encoding');
     return config;
   },
 };
