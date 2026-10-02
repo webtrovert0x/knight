@@ -74,8 +74,8 @@ export const GameLobby: React.FC<GameLobbyProps> = ({
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-950 via-slate-900 to-purple-950 border border-indigo-500/30 p-8 mb-8 shadow-2xl">
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold mb-3">
+              <img src="/botchain.jpeg" alt="BOT Chain" className="w-4 h-4 rounded-full object-cover" />
               Live on BOT Chain (Chain ID 677)
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">

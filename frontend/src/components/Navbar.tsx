@@ -49,7 +49,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-xl font-extrabold bg-gradient-to-r from-white via-indigo-100 to-cyan-300 bg-clip-text text-transparent">
                 Knight
               </span>
-              <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+              <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+                <img src="/botchain.jpeg" alt="BOT Chain" className="w-3.5 h-3.5 rounded-full object-cover" />
                 BOT Chain
               </span>
             </div>
@@ -125,8 +126,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="https://scan.botchain.ai/"
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700/60 hover:border-indigo-500/50 transition-all shadow-sm"
+            className="hidden sm:flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700/60 hover:border-indigo-500/50 transition-all shadow-sm group"
           >
+            <img src="/botchain.jpeg" alt="BotScan" className="w-3.5 h-3.5 rounded-full object-cover group-hover:rotate-12 transition-transform" />
             <span>BotScan</span>
             <ExternalLink className="w-3 h-3 text-slate-400" />
           </a>

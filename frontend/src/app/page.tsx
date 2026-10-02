@@ -133,10 +133,20 @@ export default function Home() {
       <footer className="relative z-10 border-t border-slate-900 bg-slate-950/90 backdrop-blur-md py-6 px-4 mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <a
+              href="https://botchain.ai"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 text-indigo-200 font-semibold transition-all group"
+            >
+              <img
+                src="/botchain.jpeg"
+                alt="BOT Chain Logo"
+                className="w-4 h-4 rounded-full object-cover group-hover:scale-110 transition-transform shadow-sm"
+              />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>BOT Chain Mainnet (Chain ID: 677)</span>
-            </div>
+            </a>
             <span>•</span>
             <a
               href="https://botchain.ai"
@@ -144,7 +154,7 @@ export default function Home() {
               rel="noreferrer"
               className="text-slate-300 hover:text-white hover:underline font-medium transition-colors"
             >
-              BOT Chain Website
+              Official Website
             </a>
             <span>•</span>
             <a
@@ -153,7 +163,7 @@ export default function Home() {
               rel="noreferrer"
               className="text-slate-300 hover:text-white hover:underline font-medium transition-colors"
             >
-              BOT Chain Explorer
+              BotScan Explorer
             </a>
           </div>
 
